@@ -18,11 +18,8 @@
     </nav>
     <h1>UPDATE ORDER</h1>
     <form method="post" action="/orders/update/<%= orders.order_id %>">
-        <!-- <label for="orders_id">Order ID:</label>
-        <input type="text" id="orders_id" name="orders_id" value="<%= orders.orders_id %>"> -->
-
         <label for="products_id">Product ID:</label>
-        <input type="text" id="product_id" name="products_id" value="<%= orders.product_id %>">
+        <input type="text" id="product_id" name="product_id" value="<%= orders.product_id %>">
 
         <label for="user_id">User ID:</label>
         <input type="text" id="user_id" name="user_id" value="<%= orders.user_id %>">

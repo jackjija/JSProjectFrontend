@@ -32,6 +32,7 @@
             <td><%= orders.product_id %></td>
             <td><%= orders.user_id %></td>
             <td>
+                <a href="/orders/update/<%= orders.order_id %>">Edit</a>
                 <a href="/orders/delete/<%= orders.order_id %>">Delete</a>
             </td>
         </tr>

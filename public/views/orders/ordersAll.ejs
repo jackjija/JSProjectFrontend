@@ -67,13 +67,11 @@
                 <td><%= surname %></td>
                 <td>
                     <a href="/orders/<%= orders[i].order_id %>">View</a>
-                    <a href="/orders/update/<%= orders[i].order_id %>">Edit</a>
-                    <a href="/orders/delete/<%= orders[i].order_id %>">Delete</a>
                 </td>
             </tr>
             <% } %>
     </table>
-    <a href="/order/create">Create</a>
+    <center><a href="/order/create">Create</a></center>
 </body>
 
 </html>

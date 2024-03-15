@@ -30,7 +30,8 @@
         <tr>
             <td><%= categories.category_id %></td>
             <td><%= categories.category_name %></td>
-            <td>
+            <td>    
+                <a href="/categories/update/<%= categories.category_id %>">Edit</a>
                 <a href="/categories/delete/<%= categories.category_id %>">Delete</a>
             </td>
         </tr>

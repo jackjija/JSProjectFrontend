@@ -6,7 +6,7 @@ const { env } = require('process');
 const app = express();
 
 //const base_url = "http://localhost:5000";
-const base_url = "http://10.104.16.76"
+const base_url = "https://env-5844107.proen.app.ruk-com.cloud/"
 
 app.set("views" , path.join(__dirname , "/public/views"))
 app.set("view engine" , "ejs")
@@ -240,16 +240,13 @@ app.get("/orders/update/:id", async (req, res) => {
 });
 
 app.post("/orders/update/:id", async (req, res) => {
-    try {
-        const data = {
-            order_id: req.body.orders_id,
-            product_id: req.body.products_id,
-            user_id: req.body.user_id
-        };
-        await axios.put(base_url + '/orders/' + req.params.id, data); 
-        res.redirect('/orders/');
-    } catch (error) {
-        res.status(500).send(error);
+    try{
+        const data = {order_id: req.body.order_id , product_id: req.body.product_id , user_id: req.body.user_id};
+        await axios.put(base_url + '/order/' + req.params.id, data);
+        res.redirect("/orders");
+    }catch (err){
+        console.error(err);
+        res.status(500).send('Error');
     }
 });
 
@@ -280,7 +277,7 @@ app.get("/categories/:id", async (req, res) => {
     }
 });
 
-app.get("/categories/create", (req, res) => {
+app.get("/categorie/create", (req, res) => {
     res.render("categories/create");
 });
 

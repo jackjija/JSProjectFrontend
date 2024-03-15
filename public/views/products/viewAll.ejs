@@ -46,12 +46,10 @@
           <td><%= product[i].price  %></td>
           <td>
               <a href="/product/<%= product[i].product_id %>">View</a>
-              <a href="/product/update/<%= product[i].product_id %>">Edit</a>
-              <a href="/product/delete/<%= product[i].product_id %>">Delete</a>
           </td>
         </tr>
     <% } %> 
 </table>
-<a href="/product_create">Create</a>
+<center><a href="/product_create">Create</a></center>
 </body>
 </html>
