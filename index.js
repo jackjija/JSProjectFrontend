@@ -5,8 +5,8 @@ const path = require('path');
 const { env } = require('process');
 const app = express();
 
-//const base_url = "http://localhost:5000";
-const base_url = "https://env-5844107.proen.app.ruk-com.cloud"
+// const base_url = "http://localhost:5000";
+const base_url = "http://node58408-env-2915352.proen.app.ruk-com.cloud"
 
 app.set("views" , path.join(__dirname , "/public/views"))
 app.set("view engine" , "ejs")
