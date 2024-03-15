@@ -10,17 +10,17 @@
 
     <nav>
         <ul>
-            <li><a href="/users">Users</a></li>
             <li><a href="/products" >Products</a></li>
+            <li><a href="/users">Users</a></li>
             <li><a href="/orders">Orders</a></li>
             <li><a href="/categories" class="active">Categories</a></li>
         </ul>
     </nav>
-    <h1>CREATE CATEGORIES</h1>
-    <form method="post" action="/categories/create">
+    <h1>CREATE Categories</h1>
+    <form method="post" action="/categorie/create">
 
-        <label for="category_name">Category Name:</label>
-        <input type="text" id="category_name" name="category_name" >
+        <label for="categories_name">Categories NAME:</label>
+        <input type="text" id="categories_name" name="categories_name" >
 
         <input type="submit" value="Create">
         <a href="/categories">Back</a>

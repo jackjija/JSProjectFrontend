@@ -280,25 +280,26 @@ app.get("/categories/:id", async (req, res) => {
     }
 });
 
-app.get("/categories/create" , async (req,res) => {
+app.get("/categorie/create", async (req, res) => {
     try {
-    res.render("categories/create")
+        res.render("categories/create");
     } catch(err) {
         res.status(500).send(err)
-    }    
-})
+    }   
+});
 
-app.post("/categories/create" , async (req,res) => {
+app.post("/categorie/create", async (req, res) => {
     try {
-        const categories = { category_id : req.body.category_id,
-        category_name : req.body.category_name}
-        await axios.post(base_url + "/categories/"  , categories )
-        res.redirect("/categories/")
-    } catch(err) {
-        res.status(500).send(err)
+        const data = {
+            category_id: req.body.categories_id,
+            category_name: req.body.categories_name,
+        };
+        await axios.post(base_url + '/categories/', data); 
+        res.redirect('/categories/');
+    } catch (error) {
+        res.status(500).send(error);
     }
-    
-})
+});
 
 app.get("/categories/update/:id", async (req, res) => {
     try {         
