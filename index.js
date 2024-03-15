@@ -280,15 +280,11 @@ app.get("/categories/:id", async (req, res) => {
     }
 });
 
-app.get("/categorie/create", async (req, res) => {
-    try {
-        res.render("categories/create");
-    } catch(err) {
-        res.status(500).send(err)
-    }   
+app.get("/categories/create", (req, res) => {
+    res.render("categories/create");
 });
 
-app.post("/categorie/create", async (req, res) => {
+app.post("/categories/create", async (req, res) => {
     try {
         const data = {
             category_id: req.body.categories_id,
