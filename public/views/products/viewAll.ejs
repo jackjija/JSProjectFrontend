@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div style="width: 100% ; border: 1px solid #ccc;height: 100px;">
+    <h1>SANITARYWARE SHOP</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/users">Users</a></li>
+        <li><a href="/products" class="active">Products</a></li>
+        <li><a href="/orders">Orders</a></li>
+        <li><a href="/categories">Categories</a></li>
+    </ul>
+    
+</nav>
+
+<table>
+    <tr>
+      <th>product Id</th>
+      <th>product</th>
+      <th>category</th>
+      <th>price</th>
+      <th>Action</th>
+      </tr>
+    <% for(var i = 0; i < product.length; i++) { %>
+        <tr>
+          <td><%= product[i].product_id  %></td>
+          <td><%= product[i].product_name  %></td>
+
+          <% let categoryName 
+          for(var j = 0; j < categories.length; j++) { 
+            if(product[i].category_id == categories[j].category_id) {
+              categoryName = categories[j].category_name
+            }    
+          }
+            %>
+          <td><%= categoryName %></td> 
+
+
+          <td><%= product[i].price  %></td>
+          <td>
+              <a href="/product/<%= product[i].product_id %>">View</a>
+              <a href="/product/update/<%= product[i].product_id %>">Edit</a>
+              <a href="/product/delete/<%= product[i].product_id %>">Delete</a>
+          </td>
+        </tr>
+    <% } %> 
+</table>
+<a href="/product_create">Create</a>
+</body>
+</html>

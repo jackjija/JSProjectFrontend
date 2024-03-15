@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <div style="width: 100% ; border: 1px solid #ccc;height: 100px;">
+        <h1>SANITARYWARE SHOP</h1>
+      </div>
+    <nav>
+        <ul>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/users">Users</a></li>
+            <li><a href="/orders" class="active">Orders</a></li>
+            <li><a href="/categories">Categories</a></li>
+
+        </ul>
+    </nav>
+    <table>
+        <tr>
+            <th>Order ID</th>
+            <th>Product Name</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Action</th>
+        </tr>
+
+        <% for (let i=0; i < orders.length; i++) { %>
+            <tr>
+                <td>
+                    <%= orders[i].order_id %>
+                </td>
+
+                <td>
+                <%
+                let productsID = orders[i].product_id
+                let id = 1
+                for( let a=0; a < productsID.length; a++) {
+                    for( let b=0; b < products.length; b++) {
+                        if(productsID[a]  == products[b].product_id) {
+                %>
+                            <%= id + ". " + products[b].product_name  %><br>
+                <%
+                            id++;
+                        }
+                    }
+                }
+                %>
+                </td>
+
+                <% 
+                let Name
+                let surname 
+                for(let j=0; j < users.length; j++) { 
+                    if(orders[i].user_id == users[j].user_id) {
+                        Name=users[j].fname 
+                        surname=users[j].lname
+                    }
+                } 
+                %>
+                <td><%= Name %></td>
+                <td><%= surname %></td>
+                <td>
+                    <a href="/orders/<%= orders[i].order_id %>">View</a>
+                    <a href="/orders/update/<%= orders[i].order_id %>">Edit</a>
+                    <a href="/orders/delete/<%= orders[i].order_id %>">Delete</a>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+    <a href="/order/create">Create</a>
+</body>
+
+</html>

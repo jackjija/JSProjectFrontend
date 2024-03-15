@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="/users">Users</a></li>
+            <li><a href="/products" >Products</a></li>
+            <li><a href="/orders">Orders</a></li>
+            <li><a href="/categories" class="active">Categories</a></li>
+        </ul>
+    </nav>
+    <h1>CREATE CATEGORIES</h1>
+    <form method="post" action="/categories/create">
+
+        <label for="category_name">Category Name:</label>
+        <input type="text" id="category_name" name="category_name" >
+
+        <input type="submit" value="Create">
+        <a href="/categories">Back</a>
+    </form>
+</body>
+</html>
