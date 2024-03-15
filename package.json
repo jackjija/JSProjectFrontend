@@ -1,11 +1,11 @@
 {
-  "name": "front_end",
+  "name": "jsprojectfrontend",
   "version": "1.0.0",
   "description": "",
-  "main": "server_front.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server_front.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
